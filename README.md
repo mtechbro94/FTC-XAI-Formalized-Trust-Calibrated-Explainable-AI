@@ -112,8 +112,8 @@ The repository includes scripts to generate high-resolution, camera-ready figure
 ### 1. Installation
 Clone the repository and install dependencies:
 ```bash
-git clone https://github.com/mtechbro94/FTC-XAI.git
-cd FTC-XAI
+git clone https://github.com/mtechbro94/FTC-XAI-Formalized-Trust-Calibrated-Explainable-AI.git
+cd FTC-XAI-Formalized-Trust-Calibrated-Explainable-AI
 pip install -r requirements.txt
 ```
 
@@ -144,7 +144,7 @@ If you find this research or code useful, please cite our manuscript:
   title     = {Formalized Trust-Calibrated Explainable AI (FTC-XAI): A Unified, Clinically Validated Framework Linking Explanation Quality to Clinician Trust and Decision Performance},
   journal   = {Preprint Under Peer Review},
   year      = {2026},
-  url       = {https://github.com/mtechbro94/FTC-XAI}
+  url       = {https://github.com/mtechbro94/FTC-XAI-Formalized-Trust-Calibrated-Explainable-AI}
 }
 ```
 
