@@ -1,0 +1,199 @@
+{
+    "timestamp": "Thu Oct 22 20:11:05 2026",
+    "model_performance": {
+        "pulmonary_nodule_DenseNet": {
+            "AUROC": 0.9959493670886076,
+            "AUPRC": 0.987343775036052,
+            "Sensitivity": 0.9873417721518988,
+            "Specificity": 0.992
+        },
+        "cardiovascular_mace_CatBoost": {
+            "AUROC": 0.9991051623311152,
+            "AUPRC": 0.9959918187645727,
+            "Sensitivity": 0.9568965517241379,
+            "Specificity": 0.9985380116959064
+        }
+    },
+    "explanation_quality": {
+        "Testbed_A_Lung": {
+            "Vanilla_Saliency": {
+                "auc_del": {
+                    "mean": 0.20369404499553267,
+                    "std": 0.35295031195741217
+                },
+                "auc_ins": {
+                    "mean": 0.13207335702996695,
+                    "std": 0.22913866091328872
+                },
+                "lipschitz": {
+                    "mean": 0.00011272562074407636,
+                    "std": 7.862938913073882e-05
+                },
+                "dice": {
+                    "mean": 0.35000000000000003,
+                    "std": 0.16583123951776998
+                }
+            },
+            "Standard_LIME": {
+                "auc_del": {
+                    "mean": 0.11540550343164446,
+                    "std": 0.20249517894697913
+                },
+                "auc_ins": {
+                    "mean": 0.1801766639620891,
+                    "std": 0.3122446336667962
+                },
+                "lipschitz": {
+                    "mean": 41.47609265443402,
+                    "std": 39.86539871805664
+                },
+                "dice": {
+                    "mean": 0.38333333333333336,
+                    "std": 0.12801909579781012
+                }
+            },
+            "FTC_XAI_CGLIME": {
+                "auc_del": {
+                    "mean": 0.1094512695609491,
+                    "std": 0.20509822323346716
+                },
+                "auc_ins": {
+                    "mean": 0.23958996361905013,
+                    "std": 0.41495240629604274
+                },
+                "lipschitz": {
+                    "mean": 10.814329892756227,
+                    "std": 20.86679477400944
+                },
+                "dice": {
+                    "mean": 0.5780364372469636,
+                    "std": 0.1993327368919392
+                },
+                "Q": {
+                    "mean": 0.6301693974858704,
+                    "std": 0.08848393016310077
+                }
+            }
+        },
+        "Testbed_B_Cardio": {
+            "Perturbation_Saliency": {
+                "auc_del": {
+                    "mean": 0.00038310509457539126,
+                    "std": 0.0004642037929902414
+                },
+                "auc_ins": {
+                    "mean": 0.0003455663716013427,
+                    "std": 0.0002164603711440586
+                },
+                "lipschitz": {
+                    "mean": 0.07462255644097668,
+                    "std": 0.11780255734224888
+                },
+                "dice": {
+                    "mean": 0.3333333333333333,
+                    "std": 0.09622504486493763
+                }
+            },
+            "Standard_TreeSHAP": {
+                "auc_del": {
+                    "mean": 0.00048199287630753965,
+                    "std": 0.000658555848012183
+                },
+                "auc_ins": {
+                    "mean": 0.0002913982497712761,
+                    "std": 0.00014893871942251442
+                },
+                "lipschitz": {
+                    "mean": 24.618000358224425,
+                    "std": 17.625412074809596
+                },
+                "dice": {
+                    "mean": 0.2916666666666667,
+                    "std": 0.13819269959814165
+                }
+            },
+            "FTC_XAI_Monotonic": {
+                "auc_del": {
+                    "mean": 0.00031985191405675353,
+                    "std": 0.00014216148461335015
+                },
+                "auc_ins": {
+                    "mean": 0.0004659870440754953,
+                    "std": 0.0006253508221472822
+                },
+                "lipschitz": {
+                    "mean": 0.26145453365088267,
+                    "std": 0.37226666563479854
+                },
+                "dice": {
+                    "mean": 0.2777777777777778,
+                    "std": 0.10393492741038726
+                },
+                "Q": {
+                    "mean": 0.5925033700598132,
+                    "std": 0.03158656100700174
+                }
+            }
+        }
+    },
+    "clinician_study_summary": {
+        "C0_Unassisted": {
+            "TECE": null,
+            "ORI": null,
+            "URI": null,
+            "accuracy_pct": 77.91666666666667,
+            "mean_latency_sec": 47.02539444111855,
+            "erroneous_override_success_pct": null
+        },
+        "C1_Unexplained_AI": {
+            "TECE": 0.19583333333333336,
+            "ORI": 0.4358974358974359,
+            "URI": 0.26865671641791045,
+            "accuracy_pct": 89.16666666666667,
+            "mean_latency_sec": 41.00095375494173,
+            "erroneous_override_success_pct": 56.41025641025641
+        },
+        "C2_Standard_XAI": {
+            "TECE": 0.15,
+            "ORI": 0.5365853658536586,
+            "URI": 0.21105527638190955,
+            "accuracy_pct": 85.83333333333333,
+            "mean_latency_sec": 56.53487283077211,
+            "erroneous_override_success_pct": 46.34146341463415
+        },
+        "C3_FTC_XAI": {
+            "TECE": 0.0708333333333333,
+            "ORI": 0.14285714285714285,
+            "URI": 0.08962264150943396,
+            "accuracy_pct": 97.08333333333333,
+            "mean_latency_sec": 44.36115761009714,
+            "erroneous_override_success_pct": 85.71428571428571
+        }
+    },
+    "federated_equity_audit": {
+        "passed_regulatory_audit": true,
+        "min_deqr": 1.0,
+        "threshold": 0.8,
+        "pairwise_deqr": {
+            "Underrepresented_Strata_vs_Majority_Demographic": 1.023372497898244
+        },
+        "node_group_quality_means": {
+            "Node_1_Academic": {
+                "Majority_Demographic": 0.3080489315156555,
+                "Underrepresented_Strata": 0.3152488147537864
+            },
+            "Node_2_Community": {
+                "Majority_Demographic": 0.3171198351255102,
+                "Underrepresented_Strata": 0.3213180009447398
+            },
+            "Node_3_Suburban": {
+                "Majority_Demographic": 0.3160483659099951,
+                "Underrepresented_Strata": 0.3188903709703046
+            },
+            "Node_4_Rural": {
+                "Majority_Demographic": 0.31069508955360536,
+                "Underrepresented_Strata": 0.32069125303278684
+            }
+        }
+    }
+}
