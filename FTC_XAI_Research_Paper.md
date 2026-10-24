@@ -391,12 +391,8 @@ We benchmarked FTC-XAI against four standard approaches:
 3. **Standard Grad-CAM / Vanilla LIME:** Employs standard superpixel segmentation without tissue density constraints or plausibility penalties.
 4. **Standard TreeSHAP:** Generates unconstrained path-dependent attributions without checking for feature collinearity or stability.
 
-### 4.3 Clinician Cohort and Study Logistics
-We recruited 24 board-certified clinicians from two academic medical centers:
-* **Radiology Group:** 12 board-certified thoracic radiologists (median experience: 9.4 years; range: 3–21 years).
-* **Cardiology Group:** 12 board-certified clinical cardiologists and vascular specialists (median experience: 11.2 years; range: 4–24 years).
-
-Each clinician evaluated 40 independent, randomized clinical cases, evenly divided across the four Latin Square blocks (10 cases per condition). This produced 960 fully adjudicated, clinician-in-the-loop diagnostic interactions. A mandatory 14-day washout period separated consecutive blocks to prevent memory retention of specific case histories. The testing interface logged all mouse tracking, mask toggles, diagnostic determinations, confidence ratings, and time-to-decision latencies with millisecond precision.
+### 4.3 Clinician Cohort Modeling and Study Logistics
+The clinician-in-the-loop evaluation was executed as an in-silico computational simulation modeling 24 board-certified clinician profiles (12 thoracic radiologists, 12 clinical cardiologists; stratified into 12 junior fellows with $\le 5$ years experience and 12 senior attendings with $> 10$ years experience). Cognitive reliance heuristics, automation bias susceptibilities, and algorithmic skepticism baselines were parameterized from empirical human-factor clinical trial distributions established in digital medicine literature (Jacobs et al., npj Digital Medicine, 2025; TAXAI, Scientific Reports, 2026). Each simulated clinician profile evaluated 40 independent, randomized clinical cases across the counterbalanced $4 \times 4$ Latin Square design (10 cases per condition), yielding 960 fully adjudicated diagnostic interactions. The evaluation interface recorded diagnostic determinations, reliance actions, error overrides, and review latencies.
 
 ### 4.4 Statistical Analysis Plan
 We analyzed downstream diagnostic accuracy, clinician reliance, and decision latency using generalized linear mixed-effects models (GLMM). 
@@ -672,6 +668,11 @@ Future extensions will expand FTC-XAI along three directions:
 1. Adapting the quality metric suite to multimodal clinical foundation models and generative dialogue systems.
 2. Conducting longitudinal, in-clinic studies to monitor trust calibration over months of daily use.
 3. Deploying the federated auditing layer across multi-national health systems to evaluate cross-border regulatory compliance.
+
+---
+
+## Ethics Approval and Consent to Participate
+This study utilized fully de-identified, publicly available retrospective data from the National Cancer Institute Lung Image Database Consortium (LIDC-IDRI) via The Cancer Imaging Archive (TCIA), accessible under Creative Commons Attribution 3.0 Unported licenses. Individual patient informed consent was waived by the original contributing clinical institutions. The cardiovascular risk prediction testbed utilized de-identified open benchmark cohorts. The clinician-in-the-loop reader evaluation was conducted as an in-silico computational simulation modeling cognitive reliance behaviors based on published empirical clinician distributions (Jacobs et al., npj Digital Medicine, 2025). No living human subjects were directly recruited, no clinical interventions were performed, and no patient care or treatment decisions were affected; therefore, institutional review board approval for human subject experimentation was not required under 45 CFR 46.104(d).
 
 ---
 
